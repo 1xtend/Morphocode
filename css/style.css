@@ -193,8 +193,8 @@ body.is-fixed {
     width: 100%;
     height: 100vh;
     background-color: rgba(99, 114, 128, 0.6);
-    -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
     z-index: 2;
     transform: translateY(-120%);
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
@@ -642,4 +642,77 @@ body.is-fixed {
     border-radius: 0px 0px 4px 4px;
     margin-left: 0;
   }
+}
+
+.footer__body {
+  padding: 50px 0 100px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  gap: 30px;
+}
+@media (max-width: 767.98px) {
+  .footer__body {
+    padding: 20px 40px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+}
+@media (max-width: 419.98px) {
+  .footer__body {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+  }
+}
+
+.col-footer__title {
+  font-family: "Sailec-Bold", sans-serif;
+  font-size: 0.875rem;
+  line-height: 121%;
+  color: var(--color-grey);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.col-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.col-footer__links_line {
+  padding-bottom: 25px;
+  margin-bottom: 17px;
+}
+.col-footer__links_line::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+}
+.col-footer__link {
+  font-size: 0.875rem;
+  line-height: 171%;
+  color: var(--color-grey-blue);
+  letter-spacing: 0.25px;
+  transition: color 0.2s linear;
+}
+.col-footer__link:hover {
+  color: var(--color-grey-dark);
+}
+
+.socials-col-footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.socials-col-footer__link svg path {
+  fill: #1976d2;
+  transition: fill 0.2s linear;
+}
+.socials-col-footer__link svg path:hover {
+  fill: var(--color-blue-hover);
+}
+.socials-col-footer__link svg path:active {
+  fill: var(--color-blue-active);
 }
