@@ -25,6 +25,7 @@
   --color-grey-dark: #434a54;
   --color-blue: #1d6ff3;
   --color-blue-hover: #1059cf;
+  --color-blue-active: #0a4db8;
 }
 
 // Global styles
@@ -462,5 +463,98 @@ body {
   }
   &__text {
     @include textProperties(16px, 26px, var(--color-grey-dark));
+  }
+}
+
+// Contact
+
+.contact {
+  background-color: #eeeeee;
+
+  &__body {
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    @media (max-width: 990.98px) {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767.98px) {
+      padding: 40px 0;
+    }
+  }
+  &__content {
+    max-width: 463px;
+
+    @media (max-width: 990.98px) {
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin-bottom: 18px;
+  }
+}
+
+.form-contact {
+  flex: 0 1 420px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 479.98px) {
+    display: block;
+  }
+
+  &__email {
+    flex: 1 1 100%;
+    border: 1px solid #979797;
+    padding: 8px;
+    min-height: 42px;
+    @include textProperties(18px, 24px, var(--color-grey));
+    border-radius: 4px 0px 0px 4px;
+
+    &::placeholder {
+      color: #979797;
+    }
+
+    &:focus {
+      border: 1px solid var(--color-blue);
+      box-shadow: 0 0 2px rgba(29, 111, 243, 0.2);
+    }
+
+    @media (max-width: 479.98px) {
+      width: 100%;
+      border-radius: 4px 4px 0px 0px;
+    }
+  }
+  &__btn {
+    @include textProperties(18px, 24px, #fff);
+    background-color: var(--color-blue);
+    min-height: 42px;
+    display: inline-flex;
+    padding: 5px 22px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0px 4px 4px 0px;
+    transition: background-color 0.2s linear;
+    margin-left: -1px;
+
+    &:hover {
+      background-color: var(--color-blue-hover);
+    }
+    &:active {
+      background-color: var(--color-blue-active);
+    }
+
+    @media (max-width: 479.98px) {
+      width: 100%;
+      border-radius: 0px 0px 4px 4px;
+      margin-left: 0;
+    }
   }
 }
